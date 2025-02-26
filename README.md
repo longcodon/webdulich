@@ -1,66 +1,97 @@
-				WED DU LỊCH
- 
-Giới thiệu
-Wed du lịch là một trang web thương mại điện tử chuyên cung cấp các tour du lịch chất lượng cao. Trang web được xây dựng trên nền tảng Laravel, một framework PHP mạnh mẽ và linh hoạt, giúp việc phát triển trở nên dễ dàng và thú vị hơn.
-Hệ thống Quản lý tour
-Hệ thống này giúp quản lý sản phẩm, đơn hàng và các giao dịch của người dùng, với phân quyền rõ ràng giữa Admin và Guest. Admin có quyền quản lý đầy đủ các chức năng của hệ thống, trong khi Guest có quyền truy cập vào các tính năng cơ bản.
-Tài liệu dự án chi tiết here
-Tài liệu API here
-Chức năng chung (Cả Admin và Guest đều có)
-•	Quản lý Tài khoản:
-o	Đăng nhập tài khoản (Admin).
-o	Đổi mật khẩu (Admin).
-•	Xem Sản phẩm:
-o	Xem danh sách tour.
-o	Xem chi tiết tour .
-o	Xem danh mục tour.
-________________________________________
-Phân quyền
-Admin
-Admin có quyền quản lý toàn bộ hệ thống và thực hiện các chức năng sau:
-1.	Quản lý khách hàng
-o	Xem danh sách khách hàng.
-2.	Quản lý tour
-o	Thêm sản tour.
-o	Chỉnh sửa thông tin tour.
-o	Xóa tour.
-o	Quản lý danh mục tour.
-3.	Quản lý thông tin khách hàng
-o	Xem danh sách khách hàng.
-o	Cập nhật trạng thái đơn hàng (Status).
-o	Xem lịch trình của tour
-o	Email,Sdt của khách hàng
-o	Ngày đặt ngày di ngày về
-o	Xem ghi chú đơn hàng(Note).
-4.	Quản lý Doanh thu (Transaction):
-o	Xem báo cáo doanh thu.
-o	Quản lý các khoản thu chi.
-5.	Quản lý Đánh giá (Review):
-o	Xem danh sách đánh giá.
-Guest
-Guest có quyền truy cập các chức năng sau:
-1.	Quản lý Đơn hàng :
-o	Tạo đơn hàng mới.
-o	Xem lịch sử đơn hàng.
-o	Xem chi tiết đơn hàng.
-o	Hủy đơn hàng (nếu có thể).
-2.	Xem các phương thức thanh toán của cửa hàng.
-3.	Xem trạng thái đơn hàng (Status).
-________________________________________
-Mô hình Use_Case
- 
-________________________________________
-Một số hình ảnh
-Home
- 
- 
-________________________________________
-Tài liệu và Hỗ trợ
-•	Tài liệu Laravel
-•	Laravel Bootcamp
-•	Laracasts
+Travel Booking System
+Travel Booking System là một ứng dụng web được xây dựng bằng framework Laravel để quản lý và đặt tour du lịch. Ứng dụng cung cấp giao diện quản trị để quản lý danh mục, tour, lịch trình, thư viện ảnh và đặt chỗ, cùng với giao diện người dùng để xem và đặt tour.
 
+Cấu trúc dự án
+Dự án được tổ chức trong thư mục app/Http/Controllers với các controller chính:
+
+Base Controllers:
+Controller.php: Controller cơ sở kế thừa từ Laravel, sử dụng các trait AuthorizesRequests và ValidatesRequests.
+Admin Controllers:
+BookingController.php: Quản lý đặt tour (xem danh sách, chi tiết, thêm mới).
+CategoriesController.php: Quản lý danh mục tour (tạo, chỉnh sửa, xóa).
+GalleryController.php: Quản lý thư viện ảnh của tour (thêm, xóa).
+ScheduleController.php: Quản lý lịch trình và chính sách tour (thêm, chỉnh sửa).
+ToursController.php: Quản lý tour (tạo, chỉnh sửa, xóa).
+Frontend Controllers:
+HomeController.php: Hiển thị dashboard sau khi đăng nhập (yêu cầu xác thực).
+IndexController.php: Điều khiển giao diện người dùng (trang chủ, danh sách tour theo danh mục, chi tiết tour).
+Yêu cầu hệ thống
+PHP >= 8.0
+Composer
+Laravel >= 9.x
+MySQL hoặc cơ sở dữ liệu tương thích
+Web server (Apache/Nginx)
+Hướng dẫn cài đặt
+Clone repository:
+bash
+Wrap
+Copy
+git clone <repository-url>
+cd travel-booking-system
+Cài đặt dependencies:
+bash
+Wrap
+Copy
+composer install
+Sao chép file môi trường:
+bash
+Wrap
+Copy
+cp .env.example .env
+Cấu hình file .env:
+Cập nhật thông tin cơ sở dữ liệu:
+text
+Wrap
+Copy
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=travel_booking
+DB_USERNAME=root
+DB_PASSWORD=
+Tạo key ứng dụng:
+bash
+Wrap
+Copy
+php artisan key:generate
+Chạy migration:
+bash
+Wrap
+Copy
+php artisan migrate
+Khởi động server:
+bash
+Wrap
+Copy
+php artisan serve
+Truy cập ứng dụng tại: http://localhost:8000.
+Chức năng chính
+Quản trị (Admin)
+Quản lý danh mục: Tạo, chỉnh sửa, xóa danh mục tour với danh mục cha/con.
+Quản lý tour: Thêm, sửa, xóa tour với thông tin chi tiết (giá, ngày đi, phương tiện, v.v.).
+Quản lý thư viện ảnh: Thêm/xóa ảnh cho từng tour.
+Quản lý lịch trình: Thêm/cập nhật lịch trình và chính sách cho tour.
+Quản lý đặt tour: Xem danh sách và chi tiết các booking của khách hàng.
+Người dùng (Frontend)
+Trang chủ: Hiển thị danh mục chính và danh sách tour nổi bật.
+Xem tour theo danh mục: Lọc tour theo danh mục cụ thể.
+Chi tiết tour: Xem thông tin tour, lịch trình, ảnh và các tour liên quan.
+Đặt tour: Gửi yêu cầu đặt tour (tên, email, số điện thoại, số lượng người).
+Các thư viện sử dụng
+Toastr: Hiển thị thông báo thành công/lỗi.
+Illuminate\Support\Str: Tạo slug tự động từ tiêu đề.
+Ghi chú
+Đảm bảo thư mục uploads/ có quyền ghi để lưu trữ hình ảnh (chmod -R 775 uploads/).
+Một số chức năng (như edit trong BookingController) chưa được triển khai hoàn chỉnh.
+Đóng góp
+Nếu bạn muốn đóng góp vào dự án:
+
+Fork repository.
+Tạo branch mới (git checkout -b feature/your-feature).
+Commit thay đổi (git commit -m "Add your feature").
+Push lên branch (git push origin feature/your-feature).
+Tạo Pull Request.
 Liên hệ
-Nguyễn Khắc Long-23010418
-I'M from PHENIKAA UNIVERSITY
+Nếu có thắc mắc, vui lòng liên hệ qua email: [your-email@example.com].
 
+Bạn có thể sao chép nội dung trên vào file README.md trong thư mục gốc của dự án. Nếu bạn muốn thêm thông tin cụ thể hơn (như tên dự án, email liên hệ, hoặc các tính năng tùy chỉnh), hãy cho tôi biết để tôi điều chỉnh!
