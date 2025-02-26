@@ -1,6 +1,6 @@
 # Travel Booking System
 
-Travel Booking System là một ứng dụng web được xây dựng bằng framework Laravel để quản lý và đặt tour du lịch. Ứng dụng cung cấp giao diện quản trị để quản lý danh mục, tour, lịch trình, thư viện ảnh và đặt chỗ, cùng với giao diện người dùng để xem và đặt tour.
+wed du lịch là một ứng dụng web được xây dựng bằng framework Laravel để quản lý và đặt tour du lịch. Ứng dụng cung cấp giao diện quản trị để quản lý danh mục, tour, lịch trình, thư viện ảnh và đặt chỗ, cùng với giao diện người dùng để xem và đặt tour.
 
 ## Cấu trúc dự án
 
