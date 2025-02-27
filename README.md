@@ -1,6 +1,6 @@
-# Travel Booking System
+# Wed du lich
 
-Travel Booking System là một ứng dụng web được phát triển dựa trên framework Laravel, nhằm hỗ trợ quản lý và đặt tour du lịch. Ứng dụng cung cấp giao diện quản trị viên để quản lý danh mục, tour, lịch trình, thư viện ảnh và booking, cùng với giao diện người dùng để khách hàng xem thông tin và đặt tour trực tuyến.
+wed du lich là một ứng dụng web được phát triển dựa trên framework Laravel, nhằm hỗ trợ quản lý và đặt tour du lịch. Ứng dụng cung cấp giao diện quản trị viên để quản lý danh mục, tour, lịch trình, thư viện ảnh và booking, cùng với giao diện người dùng để khách hàng xem thông tin và đặt tour trực tuyến.
 
 ## Cấu trúc dự án
 
